@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+#tank1{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+}
+
