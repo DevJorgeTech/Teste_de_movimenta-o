@@ -9,8 +9,9 @@ document.addEventListener("keydown", function moverTank1(event) {
     const newPosition = tank1PositionHorizontal + 10;
     tank1.style.left = newPosition + "px";
     tank1.style.transform = 'rotate(180deg)';
+    console.log(tank1PositionHorizontal);
 
-    if (tank1PositionHorizontal > 1250) { // Barreira invisivel 
+    if (tank1PositionHorizontal > window.innerWidth - 50) { // Barreira invisivel 
       const newPosition = tank1PositionHorizontal;
       tank1.style.left = newPosition + "px"
     }
@@ -22,7 +23,7 @@ document.addEventListener("keydown", function moverTank1(event) {
     tank1.style.left = newPosition + "px"
     tank1.style.transform = 'rotate(0deg)';
 
-    if (tank1PositionHorizontal < -30) { // Barreira invisivel 
+    if (tank1PositionHorizontal < -31) { // Barreira invisivel 
       const newPosition = tank1PositionHorizontal;
       tank1.style.left = newPosition + "px"
     }
@@ -45,7 +46,7 @@ document.addEventListener("keydown", function moverTank1(event) {
     tank1.style.top = newPosition + "px"
     tank1.style.transform = 'rotate(-90deg)';
 
-    if (tank1PositionVertical > 600) {  // Barreira invisivel 
+    if (tank1PositionVertical > window.innerHeight - 50) {  // Barreira invisivel 
       const newPosition = tank1PositionVertical;
       tank1.style.top = newPosition + "px"
     }
