@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste_Movimentação</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./script_cenarioJogo.js"></script>
 </head>
 
-<body>
+<body onresize="ajustaTamanhoDoJogo()">
 
-    <div id="tank1">
-        <img src="./tank1.png" alt="tank1" srcset="" id="imgTank1">
-        <span id="tiroTank1"></span>
-        <script src="./script_tiroTank.js"></script>
-    </div>
-
+    
     <script src="./script_movimentacao.js"></script>
+    <script src="./script_tiroTank.js"></script>
+    <script>
+        posicaoRandomica()
+    </script>
 </body>
 
 </html>
