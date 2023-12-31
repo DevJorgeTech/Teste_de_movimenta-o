@@ -49,12 +49,12 @@ document.addEventListener("keydown", function moverTank1(event) {
     }
 
   } else if (event.key === " ") { // tiro do tank
-    var tiroTank = document.getElementById("tiroTank")  
+    var tiroTank1 = document.getElementById("tiroTank1")  
 
-    if (!document.body.contains(tiroTank)) { // Impede que a tecla espaço seja apertada várias vezes seguidas
-      criacaoDoTiro()
-      position_animacaoDoTiro()
-      animacao_reload()
+    if (!document.body.contains(tiroTank1)) { // Impede que a tecla espaço seja apertada várias vezes seguidas
+      criacaoDoTiroDoTank1()
+      position_animacaoDoTiroTank1()
+      animacao_reloadTank1()
     } else {
       return
     }

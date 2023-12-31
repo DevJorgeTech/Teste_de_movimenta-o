@@ -9,13 +9,22 @@ body {
     position: relative;
 }
 
-.imgTank1 {
+.imgTank1, .imgTank2 {
     width: 100px;
     height: 50px;
     position: absolute;
 }
 
-#tiroTank {
+#tiroTank1 {
+    background-color: black;
+    width: 20px;
+    height: 10px;
+    border-radius: 10px;
+    position: absolute;
+    display: none;
+}
+
+#tiroTank2 {
     background-color: black;
     width: 20px;
     height: 10px;
@@ -57,7 +66,7 @@ body {
     transition: 5s ease-in-out;}
 
 
-#recargaTank2 {
+.recargaTank2 {
     width: 200px;
     height: 15px;
     position: absolute;
@@ -67,5 +76,26 @@ body {
     border: solid 2px;
     text-align: center;
 }
+
+.recargaTank2::after{   /*  Cria um elemento após uma ação */
+    content: "";
+    width: 0%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: chartreuse;
+    position: absolute;
+    left: 0;
+    transition: 1ms ease-out;
+}
+
+.largura-alteradaTank2::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: chartreuse;
+    position: absolute;
+    left: 0;
+    transition: 5s ease-in-out;}
 
 
