@@ -49,14 +49,19 @@ document.addEventListener("keydown", function moverTank1(event) {
     }
 
   } else if (event.key === " ") { // tiro do tank
+    var tiroTank = document.getElementById("tiroTank")  
+
+    if (!document.body.contains(tiroTank)) { // Impede que a tecla espaço seja apertada várias vezes seguidas
       criacaoDoTiro()
       position_animacaoDoTiro()
+      animacao_reload()
+    } else {
+      return
+    }
   }
 })
 
-// Verificar seguinte Bug: Quando é apertado a tecla espaço 2 vezes o tiro trava;
-// Testes: Quando a tecla é pressionada a segunda vez as funções criacaoDoTiro() e position_animacaoDoTiro() são executadas 
-// novamente causando conflito; 
+
 
 
 

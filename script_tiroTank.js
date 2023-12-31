@@ -1,8 +1,9 @@
 function criacaoDoTiro() {
-  var tiroTank = document.createElement("span")
-  tiroTank.id = "tiroTank"
-  document.body.appendChild(tiroTank)
-  tiroTank.style.display = "block"  
+    var tiroTank = document.createElement("span")
+    tiroTank.id = "tiroTank"
+    document.body.appendChild(tiroTank)
+    tiroTank.style.display = "block"
+ 
 }
 
 function position_animacaoDoTiro() {
@@ -10,7 +11,6 @@ function position_animacaoDoTiro() {
   let tiroTankPositionVertical = parseInt(getComputedStyle(tank1).top);
 
   if (tank1.style.transform == "rotate(90deg)") { // Movimento para cima
-
     tiroTank.style.left = tiroTankPositionHorizontal + 40 + "px"
     tiroTank.style.top = tiroTankPositionVertical - 20 + "px"
     tiroTank.style.transform = 'rotate(90deg)';
@@ -19,7 +19,7 @@ function position_animacaoDoTiro() {
     setTimeout(() => {
       clearTimeout(movimentoTiro);
       document.body.removeChild(tiroTank)
-    }, 5000);
+    }, 4500);
 
   } else if (tank1.style.transform == "rotate(180deg)") { // Movimento para direita
 
@@ -31,7 +31,7 @@ function position_animacaoDoTiro() {
       setTimeout(() => {
         clearTimeout(movimentoTiro);
         document.body.removeChild(tiroTank)
-      }, 5000);    
+      }, 4500);    
 
   } else if (tank1.style.transform == "rotate(-90deg)") { // Movimento para baixo
 
@@ -43,7 +43,7 @@ function position_animacaoDoTiro() {
     setTimeout(() => {
       clearTimeout(movimentoTiro);
       document.body.removeChild(tiroTank)
-    }, 5000);
+    }, 4500);
 
 
   } else if (tank1.style.transform == "rotate(0deg)" || tank1.style.transform == "") { // Movimento para esquerda
@@ -55,7 +55,7 @@ function position_animacaoDoTiro() {
     setTimeout(() => {
       clearTimeout(movimentoTiro);
       document.body.removeChild(tiroTank)
-    }, 5000);
+    }, 4500);
 
   }
 }
