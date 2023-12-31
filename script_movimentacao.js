@@ -49,50 +49,15 @@ document.addEventListener("keydown", function moverTank1(event) {
     }
 
   } else if (event.key === " ") { // tiro do tank
-    criacaoDoTiro()
-    tiroTank.style.display = "block"
+      criacaoDoTiro()
+      position_animacaoDoTiro()
   }
 })
 
+// Verificar seguinte Bug: Quando é apertado a tecla espaço 2 vezes o tiro trava;
+// Testes: Quando a tecla é pressionada a segunda vez as funções criacaoDoTiro() e position_animacaoDoTiro() são executadas 
+// novamente causando conflito; 
 
 
 
-function criacaoDoTiro() {
-  var tiroTank = document.createElement("span")
-  tiroTank.id = "tiroTank"
-  document.body.appendChild(tiroTank)
-  let tiroTankPositionHorizontal = parseInt(getComputedStyle(tank1).left);
-  let tiroTankPositionVertical = parseInt(getComputedStyle(tank1).top);
 
-  if (tank1.style.transform == "rotate(90deg)") { // Movimento para cima
-
-    tiroTank.style.left = tiroTankPositionHorizontal + 40 + "px"
-    tiroTank.style.top = tiroTankPositionVertical - 20 + "px"
-    tiroTank.style.transform = 'rotate(90deg)';
-
-  } else if (tank1.style.transform == "rotate(180deg)") { // Movimento para direita
-
-    tiroTank.style.left = tiroTankPositionHorizontal + 90 + "px"
-    tiroTank.style.top = tiroTankPositionVertical + 20 +"px"
-    tiroTank.style.transform = 'rotate(180deg)';
-
-  } else if (tank1.style.transform == "rotate(-90deg)") { // Movimento para baixo
-
-    tiroTank.style.left = tiroTankPositionHorizontal + 40 + "px"
-    tiroTank.style.top = tiroTankPositionVertical + 60 + "px"
-    tiroTank.style.transform = 'rotate(-90deg)';
-
-  } else if (tank1.style.transform == "rotate(0deg)") { // Movimento para esquerda
-    tiroTank.style.left = tiroTankPositionHorizontal + "px"
-    tiroTank.style.top = tiroTankPositionVertical + 20 + "px"
-    tiroTank.style.transform = 'rotate(0deg)';
-
-  } else if (tank1.style.transform == ""){
-    tiroTank.style.left = tiroTankPositionHorizontal + "px"
-    tiroTank.style.top = tiroTankPositionVertical + 20 + "px"
-    tiroTank.style.transform = 'rotate(0deg)';   
-
-  }
-
-
-}
