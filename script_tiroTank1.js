@@ -27,6 +27,8 @@ function position_animacaoDoTiroTank1() {
     tiroTank1.style.top = tiroTank1PositionVertical + 20 + "px"
     tiroTank1.style.transform = 'rotate(180deg)';
     var movimentoTiroTank1 = setInterval(animacaoTiroTank1MovimentoParaDireita, 100);
+    var verificaMorte = setInterval(morteDoTank2Direita, 100);
+
 
       setTimeout(() => {
         clearTimeout(movimentoTiroTank1);
@@ -51,9 +53,11 @@ function position_animacaoDoTiroTank1() {
     tiroTank1.style.top = tiroTank1PositionVertical + 20 + "px"
     tiroTank1.style.transform = 'rotate(0deg)';
     var movimentoTiroTank1 = setInterval(animacaoTiroTank1MovimentoParaEsquerda, 100);
+    var verificaMorte = setInterval(morteDoTank2Esquerda, 100);
 
     setTimeout(() => {
       clearTimeout(movimentoTiroTank1);
+      clearTimeout(verificaMorte);
       document.body.removeChild(tiroTank1)
     }, 4500);
 
@@ -89,4 +93,41 @@ function animacaoTiroTank1MovimentoParaEsquerda() {
   tiroTank1.style.left = possitionTiroTank1 + increment + "px";
 
 }
+
+function morteDoTank2Esquerda(){
+  let possitionXTiroTank1 = parseInt(getComputedStyle(tiroTank1).left)
+  let possitionYTiroTank1 = parseInt(getComputedStyle(tiroTank1).top)
+  let possitionXTank2 =  parseInt(getComputedStyle(tank2).left)
+  let possitionYTank2 =  parseInt(getComputedStyle(tank2).top)
+
+  console.log((tank2.style.transform == "rotate(-90deg)" || tank2.style.transform == "90") + " Rotação");
+  console.log((possitionYTiroTank1 > possitionYTank2 - 10 && possitionYTiroTank1 <= possitionYTank2 + 70) + "Direção vertical");
+  console.log((possitionXTiroTank1 <= possitionXTank2  + 50 && possitionXTiroTank1 > possitionXTank2) + "Direção Horizontal");
+  console.log(possitionYTiroTank1);
+  console.log(possitionYTank2);
+
+
+  if((tank2.style.transform == "rotate(0deg)" || tank2.style.transform == "") && 
+    (possitionYTiroTank1 > possitionYTank2 - 10 && possitionYTiroTank1 <= possitionYTank2 + 50) &&
+    (possitionXTiroTank1 <= possitionXTank2  + 50 && possitionXTiroTank1 > possitionXTank2)){ // Tiro da direita para esquerda
+      alert("Morreu")   
+  } else if ((tank2.style.transform == "rotate(-90deg)" || tank2.style.transform == "90") && 
+    (possitionYTiroTank1 > possitionYTank2 - 10 && possitionYTiroTank1 <= possitionYTank2 + 70) &&
+    (possitionXTiroTank1 <= possitionXTank2  + 50 && possitionXTiroTank1 > possitionXTank2)){
+      alert("Morreu 2")   
+  }
+
+} 
+// function morteDoTank2Direita(){
+//   let possitionXTiroTank1 = parseInt(getComputedStyle(tiroTank1).left)
+//   let possitionYTiroTank1 = parseInt(getComputedStyle(tiroTank1).top)
+//   let possitionXTank2 =  parseInt(getComputedStyle(tank2).left)
+//   let possitionYTank2 =  parseInt(getComputedStyle(tank2).top)
+
+//   if(tank2.style.transform == "rotate(180deg)" && 
+//     (possitionYTiroTank1 > possitionYTank2 - 5 && possitionYTiroTank1 <= possitionYTank2 + 50) &&
+//     (possitionXTiroTank1 <= possitionXTank2  + 50 && possitionXTiroTank1 > possitionXTank2)){ // Tiro da direita para esquerda
+//       alert("Morreu")   
+//   }     
+// } 
 

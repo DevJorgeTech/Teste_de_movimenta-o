@@ -34,7 +34,7 @@ body {
 }
 
 .recargaTank1 {
-    width: 200px;
+    width: 30%;
     height: 15px;
     position: absolute;
     left: 5px;
@@ -67,7 +67,7 @@ body {
 
 
 .recargaTank2 {
-    width: 200px;
+    width: 30%;
     height: 15px;
     position: absolute;
     right: 5px;

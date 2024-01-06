@@ -19,7 +19,7 @@ function posicaoRandomica() {
 
     possitionTank1X = possitionTank1X < 0 ? 0 : possitionTank1X // evita que o tank spawne em posições negativas;
     possitionTank1Y = possitionTank1Y < 0 ? 0 : possitionTank1Y
-    possitionTank2X = possitionTank2X < 0 ? 0 : possitionTank2Y 
+    possitionTank2X = possitionTank2X < 0 ? 0 : possitionTank2X 
     possitionTank2Y = possitionTank2Y < 0 ? 0 : possitionTank2Y
 
 
